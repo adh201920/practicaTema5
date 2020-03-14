@@ -29,11 +29,29 @@ namespace PracticaTema5
         private void button1_Click(object sender, EventArgs e)
         {
             Alumno miAlumno = new Alumno();
-            String miAlumnoStr;
-
+            String miAlumnoStr, miAlumnoNotaTexto;  
             miAlumno.Nombre = aluNombre.Text;
-            miAlumno.Nota = Convert.ToInt32(aluNota.Text);
-            miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso")+"\n";
+            miAlumno.Nota = int.Parse(aluNota.Text);
+
+            if (miAlumno.Nota < 5)
+            {
+                miAlumnoNotaTexto = "Suspenso";
+            }
+            else if (miAlumno.Nota < 7)
+            {
+                miAlumnoNotaTexto = "Aprobado";
+            }
+            else if (miAlumno.Nota < 9)
+            {
+                miAlumnoNotaTexto = "Notable";
+            }
+            else
+            {
+                miAlumnoNotaTexto = "Sobresaliente";
+            }
+            
+
+            miAlumnoStr = miAlumno.Nombre + " " + miAlumno.Nota + " " + miAlumnoNotaTexto + "\n";
             listaAlumnos.AppendText(miAlumnoStr);
             misAlumnos.Agregar(miAlumno);
         }
@@ -194,5 +212,5 @@ namespace PracticaTema5
 
 
 }
-    
+
 
