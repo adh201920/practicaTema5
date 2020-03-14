@@ -15,10 +15,10 @@ namespace PracticaTema5
     {
         private TextBox aluNombre;
         private Label AlumnoNombreLabel;
-        private TextBox aluNota;
         private Label NotaAlumnoLabel;
         private TextBox listaAlumnos;
         private Button button1;
+        private NumericUpDown aluNota;
         Alumnos misAlumnos = new Alumnos();
 
         public Form1()
@@ -42,10 +42,11 @@ namespace PracticaTema5
         {
             this.aluNombre = new System.Windows.Forms.TextBox();
             this.AlumnoNombreLabel = new System.Windows.Forms.Label();
-            this.aluNota = new System.Windows.Forms.TextBox();
             this.NotaAlumnoLabel = new System.Windows.Forms.Label();
             this.listaAlumnos = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.aluNota = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.aluNota)).BeginInit();
             this.SuspendLayout();
             // 
             // aluNombre
@@ -63,13 +64,6 @@ namespace PracticaTema5
             this.AlumnoNombreLabel.Size = new System.Drawing.Size(136, 17);
             this.AlumnoNombreLabel.TabIndex = 1;
             this.AlumnoNombreLabel.Text = "Nombre del Alumno:";
-            // 
-            // aluNota
-            // 
-            this.aluNota.Location = new System.Drawing.Point(385, 51);
-            this.aluNota.Name = "aluNota";
-            this.aluNota.Size = new System.Drawing.Size(234, 22);
-            this.aluNota.TabIndex = 2;
             // 
             // NotaAlumnoLabel
             // 
@@ -99,16 +93,24 @@ namespace PracticaTema5
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // aluNota
+            // 
+            this.aluNota.Location = new System.Drawing.Point(385, 54);
+            this.aluNota.Name = "aluNota";
+            this.aluNota.Size = new System.Drawing.Size(120, 22);
+            this.aluNota.TabIndex = 6;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(857, 399);
+            this.Controls.Add(this.aluNota);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listaAlumnos);
             this.Controls.Add(this.NotaAlumnoLabel);
-            this.Controls.Add(this.aluNota);
             this.Controls.Add(this.AlumnoNombreLabel);
             this.Controls.Add(this.aluNombre);
             this.Name = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.aluNota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
